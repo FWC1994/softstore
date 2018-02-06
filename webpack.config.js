@@ -17,7 +17,7 @@ module.exports = {
         vendor: ['react', 'react-router-dom', 'redux', 'react-dom', 'react-redux'],
     },
     output: {
-        path: path.join(__dirname, './map-app'),
+        path: path.join(__dirname, './build'),
         filename: 'js/[name].[chunkhash].js',
         chunkFilename: 'js/[name].[chunkhash].js',
         publicPath : './'
@@ -39,7 +39,7 @@ module.exports = {
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
               fallback: 'style-loader',
-              use: ['css-loader', 'postcss-loader']
+              use: ['css-loader', 'postcss-loader?parser=postcss-scss']
             })}, {
             test: /\.(png|jpg|gif)$/,
             use: [{
@@ -67,7 +67,7 @@ module.exports = {
             name: 'runtime'
         }),
         new UglifyJSPlugin(),
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin(['build']),
         new ExtractTextPlugin({
             filename: 'css/[name].[contenthash:5].css',
             allChunks: true
@@ -80,7 +80,8 @@ module.exports = {
             component: path.join(__dirname, 'src/component'),
             router: path.join(__dirname, 'src/router'),
             actions: path.join(__dirname, 'src/redux/actions'),
-            reducers: path.join(__dirname, 'src/redux/reducers')
+            reducers: path.join(__dirname, 'src/redux/reducers'),
+            styles: path.join(__dirname, 'src/styles')
         }
     }
 };
