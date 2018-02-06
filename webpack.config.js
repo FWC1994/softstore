@@ -30,16 +30,33 @@ module.exports = {
         }, {
             test: /\.scss$/,
             include: path.resolve(__dirname, 'src'),
-            loaders: [
-              'style-loader',
-              'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
-              'postcss-loader?parser=postcss-scss'
+            use: [
+                {loader: 'style-loader'},
+                {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
+                {
+                    loader: 'postcss-loader',
+                    options:{
+                        config:{
+                            path:'./postcss.config.js'
+                        }
+                    }
+                }
             ]
           },{
             test: /\.scss$/,
             use: ExtractTextPlugin.extract({
-              fallback: 'style-loader',
-              use: ['css-loader', 'postcss-loader?parser=postcss-scss']
+              use: [
+                {loader: 'style-loader'},
+                {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
+                {
+                    loader: 'postcss-loader',
+                    options:{
+                        config:{
+                            path:'./postcss.config.js'
+                        }
+                    }
+                }
+            ]
             })}, {
             test: /\.(png|jpg|gif)$/,
             use: [{

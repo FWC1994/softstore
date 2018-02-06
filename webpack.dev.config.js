@@ -1,8 +1,5 @@
 const path = require('path');
 var webpack = require('webpack');
-const precss = require('precss');
-const autoprefixer = require('autoprefixer');
-const postcssImport = require('postcss-import');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -44,25 +41,30 @@ module.exports = {
                 include: path.join(__dirname, 'src')
             },
             {
-                test: /\.scss$/,
-                include: path.resolve(__dirname, 'src'),
-                loaders: [
-                    'style-loader',
-                    'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]',
-                    'postcss-loader'
+                test: /\.css$/,
+                include: path.resolve(__dirname, 'src/component'),
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'}                
                 ]
             },
-
-            // 公有样式，不需要私有化，单独配置
             {
-                test: /\.scss$/,
-                include: path.resolve(__dirname, 'node_modules'),
-                loaders: [
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader'
+                test: /\.css$/,
+                include: path.resolve(__dirname, 'src/pages'),
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'}                  
                 ]
             },
+            {
+                test: /\.css$/,
+                include: path.resolve(__dirname, 'src/styles'),
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'}              
+                ]
+            },
+            
             /* 小于等于8K的图片会被转成base64编码，直接插入HTML中，减少HTTP请求 */
             {
                 test: /\.(png|jpg|gif)$/,

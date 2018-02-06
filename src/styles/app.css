@@ -1,0 +1,16 @@
+
+html{
+    font-size:100px;
+}
+   
+
+html,body{
+    height:100%;
+    width:100%;
+}
+
+body{
+    font-size:0.16rem;
+    background-color: #4ac0e4;
+}
+
