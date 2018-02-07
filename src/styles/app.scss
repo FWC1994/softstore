@@ -1,4 +1,4 @@
-
+$bg:#fff000;
 html{
     font-size:100px;
 }
@@ -11,6 +11,6 @@ html,body{
 
 body{
     font-size:0.16rem;
-    background-color: #4ac0e4;
+    background-color: $bg;
 }
 

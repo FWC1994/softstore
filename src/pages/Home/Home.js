@@ -7,7 +7,6 @@ class Home extends Component {
     render() {
         return (
             <div>
-                <Header/>
                 <br/>
                 当前计数：{this.props.counter.count}<br/>
                 <button onClick={() => this.props.increment()}>+1</button>

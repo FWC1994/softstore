@@ -41,27 +41,11 @@ module.exports = {
                 include: path.join(__dirname, 'src')
             },
             {
-                test: /\.css$/,
-                include: path.resolve(__dirname, 'src/component'),
+                test: /\.css|scss$/,
                 use: [
                     {loader: 'style-loader'},
-                    {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'}                
-                ]
-            },
-            {
-                test: /\.css$/,
-                include: path.resolve(__dirname, 'src/pages'),
-                use: [
-                    {loader: 'style-loader'},
-                    {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'}                  
-                ]
-            },
-            {
-                test: /\.css$/,
-                include: path.resolve(__dirname, 'src/styles'),
-                use: [
-                    {loader: 'style-loader'},
-                    {loader: 'css-loader'}              
+                    {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
+                    {loader: 'postcss-loader'}                     
                 ]
             },
             
@@ -80,7 +64,8 @@ module.exports = {
     devServer: {
         contentBase: path.join(__dirname, './src'),
         historyApiFallback: true,
-        host: '0.0.0.0'
+        host: '0.0.0.0',
+        port: 8888
     },
     resolve: {
         alias: {

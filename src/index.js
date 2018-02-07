@@ -5,7 +5,7 @@ import {Provider} from 'react-redux';
 import store from './redux/store';
 import getRouter from 'router/router'
 import 'styles/normalize.css'
-import 'styles/app.css'
+import 'styles/app.scss'
 /*初始化*/
 renderWithHotReload(getRouter());
 
