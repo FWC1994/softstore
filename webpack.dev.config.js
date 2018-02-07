@@ -38,16 +38,28 @@ module.exports = {
                 test: /\.js$/,
                 /*cacheDirectory是用来缓存编译结果，下次编译加速*/
                 use: ['babel-loader?cacheDirectory=true'],
-                include: path.join(__dirname, 'src')
             },
             {
                 test: /\.css|scss$/,
+                include:path.join(__dirname, 'src'),
                 use: [
                     {loader: 'style-loader'},
                     {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
-                    {loader: 'postcss-loader'}                     
+                    {loader: 'postcss-loader'},
+                    {loader: 'sass-loader'},
                 ]
             },
+            {
+                test: /\.css|scss$/,
+                include:path.join(__dirname, 'node_modules'),
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
+                    {loader: 'postcss-loader'},
+                    {loader: 'sass-loader'},
+                ]
+            },
+            
             
             /* 小于等于8K的图片会被转成base64编码，直接插入HTML中，减少HTTP请求 */
             {
