@@ -41,10 +41,30 @@ module.exports = {
             },
             {
                 test: /\.css|scss$/,
-                include:path.join(__dirname, 'src'),
+                include:path.join(__dirname, 'src/component'),
                 use: [
                     {loader: 'style-loader'},
                     {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
+                    {loader: 'postcss-loader'},
+                    {loader: 'sass-loader'},
+                ]
+            },
+            {
+                test: /\.css|scss$/,
+                include:path.join(__dirname, 'src/pages'),
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
+                    {loader: 'postcss-loader'},
+                    {loader: 'sass-loader'},
+                ]
+            },
+            {
+                test: /\.css|scss$/,
+                include:path.join(__dirname, 'src/styles'),
+                use: [
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader'},
                     {loader: 'postcss-loader'},
                     {loader: 'sass-loader'},
                 ]

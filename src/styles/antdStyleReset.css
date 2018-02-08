@@ -1,0 +1,17 @@
+/* 重置antd样式*/
+
+.ant-menu-dark, .ant-menu-dark .ant-menu-sub{
+	background: rgba(255,255,255,0);
+}
+.ant-menu-horizontal {
+    line-height: 0.58rem;
+    border-bottom: 1px solid rgba(255, 255, 255,0);
+}
+.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
+	background: rgba(255,255,255,0);
+	border-bottom: 2px solid rgb(255, 255, 255);
+}
+.ant-menu-item{
+	width:1rem;
+	text-align: center;
+}

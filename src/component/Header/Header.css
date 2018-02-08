@@ -1,10 +1,28 @@
 .header{
-    height:60px;
+    height:0.6rem;
     width:100%;
     color: rgba(255,255,255,0.75);
     background-color: #24292e;
-    text-align:center;
     line-height: 60px;
+    text-align:center;
+}
+.wrapper{
+    max-width: 10.12rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+.logo{
+    height:0.6rem;
+    width:1.5rem;
+    float:left;
+}
+.menu{
+    height:0.6rem;
+    margin-left:0.5rem;
+    float:left;
+}
+.login{
+    float:right;
 }
 
 
