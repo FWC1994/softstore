@@ -1,28 +1,36 @@
 .header{
-    height:0.6rem;
+    height:0.54rem;
     width:100%;
     color: rgba(255,255,255,0.75);
     background-color: #24292e;
-    line-height: 60px;
+    line-height: 0.54rem;
     text-align:center;
 }
 .wrapper{
     max-width: 10.12rem;
+    min-width: 10.12rem;
     margin-right: auto;
     margin-left: auto;
 }
 .logo{
-    height:0.6rem;
+    height:0.54rem;
     width:1.5rem;
     float:left;
 }
 .menu{
-    height:0.6rem;
+    height:0.54rem;
     margin-left:0.5rem;
     float:left;
 }
 .login{
     float:right;
 }
+.header_a{
+    display:inline-block !important;
+    color: rgba(255,255,255,0.75) !important;
+}
 
+.header_a:hover{
+    color: rgba(255,255,255,1) !important;
+}
 

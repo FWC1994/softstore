@@ -1,17 +1,24 @@
 /* 重置antd样式*/
-
-.ant-menu-dark, .ant-menu-dark .ant-menu-sub{
-	background: rgba(255,255,255,0);
+.ant-menu{
+	background: none;
+	color: rgba(255, 255, 255, 0.75);
 }
 .ant-menu-horizontal {
-    line-height: 0.58rem;
-    border-bottom: 1px solid rgba(255, 255, 255,0);
-}
-.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
-	background: rgba(255,255,255,0);
-	border-bottom: 2px solid rgb(255, 255, 255);
+    border: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+	height:0.54rem;
 }
 .ant-menu-item{
 	width:1rem;
 	text-align: center;
+	line-height: 0.54rem;
+	height:0.54rem;
+}
+.ant-menu-horizontal > .ant-menu-item-selected>a{
+	color: #ffffff !important;
+}
+.ant-menu-horizontal > .ant-menu-item:hover, .ant-menu-horizontal > .ant-menu-submenu:hover, .ant-menu-horizontal > .ant-menu-item-active, .ant-menu-horizontal > .ant-menu-submenu-active, .ant-menu-horizontal > .ant-menu-item-open, .ant-menu-horizontal > .ant-menu-submenu-open, .ant-menu-horizontal > .ant-menu-item-selected, .ant-menu-horizontal > .ant-menu-submenu-selected{
+	border-bottom: 3px solid #1890ff;
+	color: #ffffff;
 }

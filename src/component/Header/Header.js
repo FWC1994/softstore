@@ -2,6 +2,13 @@ import React,{Component} from 'react'
 import {Menu,Icon,Avatar,Popover} from 'antd'
 import styles from "./Header.css";
 import {Link} from 'react-router-dom';
+const text = <span>Title</span>;
+const content = (
+  <div>
+    <p>Content</p>
+    <p>Content</p>
+  </div>
+);
 export default class Header extends Component{
     state = {
         current: 'mail',
@@ -24,26 +31,41 @@ export default class Header extends Component{
                             onClick={this.handleClick}
                             selectedKeys={[this.state.current]}
                             mode="horizontal"
-                            theme="dark"
+                            theme="light"
                         >
                             <Menu.Item key="index">
-                                <Icon type="mail" />首页
+                                <Icon type="home" />
+                                <Link className={styles.header_a} to={{ pathname: '/'}}>
+                                    首页
+                                </Link>
                             </Menu.Item>
-                            <Menu.Item key="page1" disabled>
-                                <Icon type="appstore" />page1
+                            <Menu.Item key="page1">
+                                <Icon type="appstore" />
+                                <Link className={styles.header_a} to={{ pathname: '/counter'}}>
+                                page1
+                                </Link>
                             </Menu.Item>
                             <Menu.Item key="page2">
-                                <Icon type="appstore" />page2
+                                <Icon type="appstore" />
+                                <Link className={styles.header_a} to={{ pathname: '/mapbox'}}>
+                                page2
+                                </Link>
                             </Menu.Item>
                             <Menu.Item key="page3">
+                                <Icon type="appstore" />
+                                <Link className={styles.header_a} to={{ pathname: '/userinfo'}}>
                                 page3
+                                </Link>
                             </Menu.Item>
                         </Menu>
                     </div>
                     <div className={styles.login}>
-                        <Avatar style={{ backgroundColor:'#f56a00', verticalAlign: 'middle' }} size="large">
-                            {"feng"}
-                        </Avatar>
+                        <Popover placement="bottomRight" title={text} content={content} trigger="click">
+                            <Avatar style={{ backgroundColor:'#f56a00', verticalAlign: 'middle',cursor:'pointer' }} size="large">
+                                {"feng"}
+                            </Avatar>
+                        </Popover>
+                        
                     </div>
                 </div>
                 

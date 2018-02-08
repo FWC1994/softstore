@@ -1,15 +1,24 @@
 import React, {Component} from 'react';
-import Header from 'component/Header/Header'
+import SiteDsc from 'component/SiteDsc/SiteDsc'
+import { Input } from 'antd';
 import {increment, decrement, reset} from 'actions/counter';
 import {connect} from 'react-redux';
-
+import styles from './Home.css'
+const Search = Input.Search;
 class Home extends Component {
     render() {
         return (
             <div>
-                <br/>
-                当前计数：{this.props.counter.count}<br/>
-                <button onClick={() => this.props.increment()}>+1</button>
+                <SiteDsc/>
+                <div className={styles.search_wrapper}>
+                    <Search
+                        placeholder="input search text"
+                        onSearch={value => console.log(value)}
+                        enterButton
+                        size="large"
+                    />     
+                </div>   
+                  
             </div>
         )
     }
