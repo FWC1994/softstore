@@ -11,7 +11,7 @@ const content = (
 );
 export default class Header extends Component{
     state = {
-        current: 'mail',
+        current: 'index',
       }
       handleClick = (e) => {
         console.log('click ', e);
@@ -24,7 +24,6 @@ export default class Header extends Component{
             <div className={styles.header} >
                 <div className={styles.wrapper}>
                     <div className={styles.logo}>
-                        logo
                     </div>
                     <div className={styles.menu}>
                         <Menu
@@ -39,13 +38,13 @@ export default class Header extends Component{
                                     首页
                                 </Link>
                             </Menu.Item>
-                            <Menu.Item key="page1">
-                                <Icon type="appstore" />
-                                <Link className={styles.header_a} to={{ pathname: '/counter'}}>
-                                page1
+                            <Menu.Item key="search">
+                                <Icon type="search" />
+                                <Link className={styles.header_a} to={{ pathname: '/search'}}>
+                                搜索
                                 </Link>
                             </Menu.Item>
-                            <Menu.Item key="page2">
+                            {/* <Menu.Item key="page2">
                                 <Icon type="appstore" />
                                 <Link className={styles.header_a} to={{ pathname: '/mapbox'}}>
                                 page2
@@ -56,7 +55,7 @@ export default class Header extends Component{
                                 <Link className={styles.header_a} to={{ pathname: '/userinfo'}}>
                                 page3
                                 </Link>
-                            </Menu.Item>
+                            </Menu.Item> */}
                         </Menu>
                     </div>
                     <div className={styles.login}>

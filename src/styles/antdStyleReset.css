@@ -22,3 +22,12 @@
 	border-bottom: 3px solid #1890ff;
 	color: #ffffff;
 }
+.ant-tabs ,.ant-tabs-nav-container{
+	line-height: 0.6 !important;
+}
+.ant-tabs-large .ant-tabs-tab{
+	padding:15px !important;
+}
+.ant-card-head{
+	min-height: 10px !important;
+}

@@ -3,3 +3,14 @@
     width:6rem;
     margin: auto;
 }
+.logo{
+    height:1rem;
+    width:4rem;
+    background-image: url(../../images/logo_black.png);
+    background-size: 4rem 1rem;
+    margin: 50px auto 20px;;
+}
+.desc{
+    height:0.1rem;
+    width:4rem;
+}

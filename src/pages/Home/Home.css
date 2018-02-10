@@ -2,3 +2,12 @@
     width:7rem;
     margin:auto;
 }
+.type_wrapper{
+    width:9rem;
+    margin:auto;
+    height:200px;
+    padding:10px 20px;
+    background-color: rgb(255, 255, 255);
+    margin-top:50px;
+    border: 1px solid #d9d9d9;
+}

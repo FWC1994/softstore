@@ -11,19 +11,22 @@
     min-width: 10.12rem;
     margin-right: auto;
     margin-left: auto;
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
 }
 .logo{
-    height:0.54rem;
+    height:0.40rem;
     width:1.5rem;
-    float:left;
+    background-image: url(../../images/logo.png);
+    background-size: 1.5rem 0.40rem;
 }
 .menu{
     height:0.54rem;
     margin-left:0.5rem;
-    float:left;
 }
 .login{
-    float:right;
+    margin-left:auto;
 }
 .header_a{
     display:inline-block !important;
