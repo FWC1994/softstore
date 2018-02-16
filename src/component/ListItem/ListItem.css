@@ -1,0 +1,35 @@
+.wrapper{
+    padding: 15px 0;
+    border-bottom: dashed 1px #e6e6e6;
+}
+.title{
+    display: block;
+    font-size: 17px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #343434;
+}
+.title:hover{
+    color: #1890ff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.abstract{
+    font-size: 13px;
+    line-height: 1.54;
+    
+}
+.detail{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.detail ul {
+    margin:0;
+    padding:0;
+}
+.detail ul li{
+    margin-right:20px;
+    list-style: none;
+    float:left;
+}

@@ -1,10 +1,9 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link,hashHistory} from 'react-router-dom';
 import Bundle from './Bundle';
+import '../mock/mockdata'
 import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
-import MapBox from 'bundle-loader?lazy&name=mapbox!pages/MapBox/MapBox';
-import Counter from 'bundle-loader?lazy&name=counter!pages/Counter/Counter';
-import UserInfo from 'bundle-loader?lazy&name=userInfo!pages/UserInfo/UserInfo';
+import SearchPage from 'bundle-loader?lazy&name=mapbox!pages/SearchPage/SearchPage';
 import Header from 'component/Header/Header';
 
 const Loading = function () {
@@ -20,14 +19,12 @@ const createComponent = (component) => (props) => (
 );
 
 const getRouter = () => (
-    <Router>
+    <Router history={hashHistory}>
         <div>
             <Header/>
             <Switch>
                 <Route exact path="/" component={createComponent(Home)}/>
-                <Route path="/mapbox" component={createComponent(MapBox)}/>
-                <Route path="/counter" component={createComponent(Counter)}/>
-                <Route path="/userinfo" component={createComponent(UserInfo)}/>
+                <Route path="/search-page" component={createComponent(SearchPage)}/>
             </Switch>
         </div>
     </Router>

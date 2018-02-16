@@ -1,7 +1,5 @@
-import counter from './reducers/counter';
-import userInfo from 'reducers/userInfo';
+import appState from 'reducers/appState';
 import {combineReducers} from 'redux';
 export default combineReducers({
-    counter,
-    userInfo
+    appState
 })

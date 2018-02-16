@@ -1,3 +1,9 @@
+.wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-80%);
+}
 .search_wrapper{
     width:7rem;
     margin:auto;
