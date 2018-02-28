@@ -13,7 +13,7 @@ class Home extends Component {
     searchCallback(value){
         if(value){
             this.props.history.push({
-                pathname:"/search-page",
+                pathname:"/softseek/search-page",
                 state:{keyword:value}
             });
             this.props.changeKeyword(value)

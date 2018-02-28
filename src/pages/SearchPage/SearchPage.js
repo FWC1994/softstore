@@ -15,10 +15,11 @@ class SearchPage extends Component {
         dataList:[],
         currentDataList:[],
         currentPage:1,
-        downloadTarget:null
+        downloadTarget:null,
+        testDataList:[]
     }
     componentWillMount(){
-        if(this.props.location.pathname === '/search-page'){
+        if(this.props.location.pathname === '/softseek/search-page'){
             this.props.changeMenu('search')
         }
         if (this.props.location.state && this.props.location.state.keyword){
@@ -41,6 +42,7 @@ class SearchPage extends Component {
                 that.setState({
                     dataList:response.data.array,
                     currentDataList:response.data.array.slice(0,pageSize),
+                    testDataList:[1]
                  })
           }).then(function(error){
             console.log(error)
@@ -127,6 +129,9 @@ class SearchPage extends Component {
                     </div>
                     
                 </div>
+                {
+                    this.state.testDataList.map((item,index)=>{})
+                }
                 <BackTop />
                 <Modal
                     visible={this.state.modelVisible}

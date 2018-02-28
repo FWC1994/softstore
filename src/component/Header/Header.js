@@ -13,7 +13,6 @@ const content = (
 );
 class Header extends Component{
     handleClick = (e) => {
-        debugger
         this.props.changeMenu(e.key)
     }
 
@@ -32,13 +31,13 @@ class Header extends Component{
                         >
                             <Menu.Item key="index">
                                 <Icon type="home" />
-                                <Link className={styles.header_a} to={{ pathname: '/'}}>
+                                <Link className={styles.header_a} to={{ pathname: '/softseek'}}>
                                     首页
                                 </Link>
                             </Menu.Item>
                             <Menu.Item key="search">
                                 <Icon type="search" />
-                                <Link className={styles.header_a} to={{ pathname: '/search-page',
+                                <Link className={styles.header_a} to={{ pathname: '/softseek/search-page',
                                                                         state:{keyword:''}}}>
                                 搜索
                                 </Link>

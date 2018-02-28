@@ -8,14 +8,16 @@ module.exports = {
             filename: 'index.html',
             template: path.join(__dirname, 'src/index.html')
         }), 
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'vendor'
-        }),
         new webpack.LoaderOptionsPlugin({
             options: {
                 devtool: 'inline-source-map',
             }
-        })
+        }),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'NODE_ENV': JSON.stringify('dev')
+             }
+         }),
     ],
     /*入口*/
     entry: {
@@ -25,11 +27,11 @@ module.exports = {
         ],
     },
     
-    /*输出到dist文件夹，输出文件名字为bundle.js*/
     output: {
-        path: path.join(__dirname, './dist'),
-        filename: '[name].[hash].js',
-        chunkFilename: '[name].[chunkhash].js'
+        path: path.join(__dirname, './softseek'),
+        filename: 'assets/js/[name].[hash].js',
+        chunkFilename: 'assets/js/[name].[chunkhash].js',
+        publicPath : '/softseek'
     },
 
     module: {

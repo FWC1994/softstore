@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Switch, Link,hashHistory} from 'react-ro
 import Bundle from './Bundle';
 import '../mock/mockdata'
 import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
-import SearchPage from 'bundle-loader?lazy&name=mapbox!pages/SearchPage/SearchPage';
+import SearchPage from 'bundle-loader?lazy&name=searchpage!pages/SearchPage/SearchPage';
 import Header from 'component/Header/Header';
 
 const Loading = function () {
@@ -23,8 +23,8 @@ const getRouter = () => (
         <div>
             <Header/>
             <Switch>
-                <Route exact path="/" component={createComponent(Home)}/>
-                <Route path="/search-page" component={createComponent(SearchPage)}/>
+                <Route exact path="/softseek" component={createComponent(Home)}/>
+                <Route path="/softseek/search-page" component={createComponent(SearchPage)}/>
             </Switch>
         </div>
     </Router>
