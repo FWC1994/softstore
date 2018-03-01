@@ -4,23 +4,6 @@ var webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-// 创建多个实例
-const componentCSS = new ExtractTextPlugin({
-    filename: 'assets/css/[name].[contenthash:5].css',
-    allChunks: true
-});
-const pageCSS = new ExtractTextPlugin({
-    filename: 'assets/css/[name].[contenthash:5].css',
-    allChunks: true
-});
-const publicCSS = new ExtractTextPlugin({
-    filename: 'assets/css/[name].[contenthash:5].css',
-    allChunks: true
-});
-const moduleCSS = new ExtractTextPlugin({
-    filename: 'assets/css/[name].[contenthash:5].css',
-    allChunks: true
-});
 module.exports = {
     devtool: 'cheap-module-source-map',
     entry: {
@@ -45,42 +28,42 @@ module.exports = {
             {
                 test: /\.css|scss$/,
                 include:path.join(__dirname, 'src/component'),
-                use: componentCSS.extract([
+                use: [
                     {loader: 'style-loader'},
                     {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
                     {loader: 'postcss-loader'},
                     {loader: 'sass-loader'},
-                ])
+                ]
             },
             {
                 test: /\.css|scss$/,
                 include:path.join(__dirname, 'src/pages'),
-                use: pageCSS.extract([
+                use: [
                     {loader: 'style-loader'},
                     {loader: 'css-loader?modules&sourceMap&importLoaders=1&localIdentName=[local]___[hash:base64:5]'},
                     {loader: 'postcss-loader'},
                     {loader: 'sass-loader'},
-                ])
+                ]
             },
             {
                 test: /\.css|scss$/,
                 include:path.join(__dirname, 'src/styles'),
-                use: publicCSS.extract([
+                use: [
                     {loader: 'style-loader'},
                     {loader: 'css-loader'},
                     {loader: 'postcss-loader'},
                     {loader: 'sass-loader'},
-                ])
+                ]
             },
             {
                 test: /\.css|scss$/,
                 include:path.join(__dirname, 'node_modules'),
-                use: moduleCSS.extract([
+                use: [
                     {loader: 'style-loader'},
                     {loader: 'css-loader'},
                     {loader: 'postcss-loader'},
                     {loader: 'sass-loader'},
-                ])
+                ]
             },
             
             
@@ -94,14 +77,6 @@ module.exports = {
                     }
                 }]
             },
-
-            {
-                test: /\.css|scss$/,
-                use: ExtractTextPlugin.extract({
-                  fallback: "style-loader",
-                  use: "css-loader"
-                })
-            }
         ]
     },
     plugins: [
@@ -123,11 +98,6 @@ module.exports = {
         }), */
         new UglifyJSPlugin(),
         new CleanWebpackPlugin(['softseek']),
-        new ExtractTextPlugin({
-            filename: 'assets/css/[name].[contenthash:5].css',
-            allChunks: true
-        }),
-        // componentCSS,pageCSS,publicCSS,moduleCSS
     ],
 
     resolve: {
